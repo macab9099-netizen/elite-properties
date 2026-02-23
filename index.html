@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Property Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0c0c0c;
+color:white;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:24px;
+color:gold;
+letter-spacing:2px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:0.3s;
+font-weight:500;
+}
+
+nav a:hover{
+color:gold;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:55px;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+animation:fadeInDown 1.5s ease;
+}
+
+.hero p{
+max-width:600px;
+font-size:18px;
+animation:fadeInUp 1.5s ease;
+}
+
+.btn{
+margin-top:30px;
+padding:12px 35px;
+border:none;
+background:gold;
+color:black;
+font-weight:600;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:white;
+}
+
+/* SECTIONS */
+section{
+padding:120px 60px;
+}
+
+.property{
+opacity:0;
+transform:translateY(60px);
+transition:all 1s ease;
+}
+
+.property.active{
+opacity:1;
+transform:translateY(0);
+}
+
+.property h2{
+font-size:40px;
+color:gold;
+margin-bottom:20px;
+font-family:'Playfair Display',serif;
+}
+
+/* SLIDER */
+.slider{
+position:relative;
+max-width:800px;
+margin:30px auto;
+overflow:hidden;
+border-radius:20px;
+}
+
+.slides{
+display:flex;
+transition:0.5s;
+}
+
+.slides img{
+width:100%;
+height:450px;
+object-fit:cover;
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+background:#111;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown{
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeInUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{font-size:35px;}
+header{padding:15px 20px;}
+nav a{margin-left:15px;font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">Elite Collection</div>
+<nav>
+<a href="#tomorrow">Tomorrow Gardens</a>
+<a href="#richoff">Richoff Hotel</a>
+<a href="#boston">Boston Garden</a>
+<a href="#lunar">Lunar Gardens</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Luxury Living & Executive Hospitality</h1>
+<p>Experience elegance, comfort, and premium architecture across our exclusive properties.</p>
+<button class="btn" onclick="scrollToContact()">Book Now</button>
+</section>
+
+<!-- PROPERTY TEMPLATE -->
+<section id="tomorrow" class="property">
+<h2>Tomorrow Gardens</h2>
+<p>Modern apartments with spacious rooms, 24/7 security and premium finishing.</p>
+<div class="slider">
+<div class="slides">
+<img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267">
+<img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353">
+</div>
+</div>
+</section>
+
+<section id="richoff" class="property">
+<h2>Richoff Executive Hotel</h2>
+<p>Executive suites, conference rooms and world-class hospitality service.</p>
+<div class="slider">
+<div class="slides">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+</div>
+</div>
+</section>
+
+<section id="boston" class="property">
+<h2>Boston Garden</h2>
+<p>Elegant architecture with secure parking and modern interiors.</p>
+<div class="slider">
+<div class="slides">
+<img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688">
+<img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb">
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858">
+</div>
+</div>
+</section>
+
+<section id="lunar" class="property">
+<h2>Lunar Gardens Hotel</h2>
+<p>Luxury suites with rooftop relaxation and fine dining experience.</p>
+<div class="slider">
+<div class="slides">
+<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772">
+<img src="https://images.unsplash.com/photo-1521783988139-893ce8c7bdf0">
+<img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791">
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>Call or WhatsApp:</p>
+<h3 style="color:gold;margin:15px 0;">0505-259977</h3>
+<button class="btn" onclick="callNow()">Call Now</button>
+</section>
+
+<footer>
+© 2026 Elite Property Collection. All Rights Reserved.
+</footer>
+
+<script>
+function scrollToContact(){
+document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+function callNow(){
+window.location.href="tel:0505259977";
+}
+
+/* SCROLL ANIMATION */
+window.addEventListener("scroll", function(){
+let sections=document.querySelectorAll(".property");
+sections.forEach(section=>{
+let position=section.getBoundingClientRect().top;
+let screenPosition=window.innerHeight/1.2;
+if(position<screenPosition){
+section.classList.add("active");
+}
+});
+});
+
+/* IMAGE SLIDER */
+document.querySelectorAll(".slider").forEach(slider=>{
+let slides=slider.querySelector(".slides");
+let total=slides.children.length;
+let index=0;
+setInterval(()=>{
+index++;
+if(index>=total){index=0;}
+slides.style.transform="translateX(-"+index*100+"%)";
+},3000);
+});
+</script>
+
+</body>
+</html>
